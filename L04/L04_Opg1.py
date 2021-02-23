@@ -79,6 +79,8 @@ plt.ylabel("Number of residuals")
 # Opgave 1e
 # =============================================================================
 X_first4 = X[:,0:4]
+
+model = linear_model.LinearRegression()
 model.fit(X_first4,y)
 
 y_pred = model.predict(X_first4)
@@ -92,11 +94,31 @@ print("The RMSE is: "+ str(RMSE_e))
 # Opgave 1f
 # =============================================================================
 X_all = X
+
+model = linear_model.LinearRegression()
 model.fit(X,y)
 
 y_pred = model.predict(X)
 
 RMSE_e = metrics.mean_squared_error(y,y_pred, squared=False)  #Returnerer RMSE hvis squared er false
 print("The RMSE is: "+ str(RMSE_e))
+#Ny RMSE endnu bedre. 
 
+#%% 
+# =============================================================================
+# Opgave 1g
+# =============================================================================
+
+vals70pct = int(len(y)*0.7)
+X_train, X_test, y_train, y_test = X[:vals70pct], X[vals70pct:], y[:vals70pct], y[vals70pct:]
+
+model = linear_model.LinearRegression()
+model.fit(X_train,y_train)
+
+y_pred = model.predict(X_test)
+
+RMSE_g = metrics.mean_squared_error(y_test,y_pred, squared=False)  #Returnerer RMSE hvis squared er false
+print("The RMSE is: "+ str(RMSE_g))
+
+# As I get a smaller error for the second attempt on the split test and train dataset, there's no evidence of an overfit. 
 
