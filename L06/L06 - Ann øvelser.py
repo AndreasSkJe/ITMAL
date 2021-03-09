@@ -40,7 +40,7 @@ mlp.fit(x,y)
 fig1 = plt.figure(dpi=400)
 plt.plot(x,y)
 plt.plot(x, mlp.predict(x), 'rx', ms=1)
-plt.title("mlp with 2 hidden units/neurons, so 2 terms in equation")
+plt.title("mlp with 2 hidden neurons, so 2 terms in equation")
 
 #Printer fundne koefficienter. De kommer i rækkefølge, så W1(1) er første værdi. og W1(2) er første værdi i anden array.
 #Bias leddene svarer til undervisers 0X-værdier. Den tredje er den overordnede bias, som er tredje hidden neuron.
@@ -94,7 +94,7 @@ plt.title('First and second part of the function')
 # =============================================================================
 mlp = MLPRegressor(activation = 'tanh', # Aktiveringsfunktionen 
                    hidden_layer_sizes = 5, # Tuple (antal layers, antal neuroner). Antal layers defaulter til 3, hvor ét er output, altså 2 hidden layers. 
-                   #Her to hidden layers med 5 neuroner og heraf led i funktionen, eller rettere flere hidden units/neurons. 
+                   #Her to hidden layers med 5 neuroner og heraf led i funktionen, eller rettere flere hidden neurons. 
                    alpha = 1e-5, 
                    solver = 'lbfgs', # Valg af solver, her quasi-Newton solver
                    max_iter=1000,
@@ -104,7 +104,7 @@ mlp.fit(x,y)
 fig4 = plt.figure(dpi=400)
 plt.plot(x,y)
 plt.plot(x, mlp.predict(x), 'rx', ms=1)
-plt.title("mlp with 5 hidden units/neurons, so 5 terms in equation")
+plt.title("mlp with 5 hidden neurons, so 5 terms in equation")
 #Printer fundne koefficienter. De kommer i rækkefølge, så W1(1) er første værdi. og W1(2) er første værdi i anden array.
 #Bias leddene svarer til undervisers 0X-værdier. Den tredje er den overordnede bias, som er tredje hidden neuron.
 co = mlp.coefs_
@@ -118,7 +118,7 @@ print(mlp.intercepts_) # = bias led
 # =============================================================================
 mlp = MLPRegressor(activation = 'tanh', # Aktiveringsfunktionen 
                    hidden_layer_sizes = 2, # Tuple (antal layers, antal neuroner). Antal layers defaulter til 3, hvor ét er output, altså 2 hidden layers. 
-                   #Her to hidden layers med 5 neuroner og heraf led i funktionen, eller rettere flere hidden units/neurons. 
+                   #Her to hidden layers med 5 neuroner og heraf led i funktionen, eller rettere flere hidden neurons. 
                    alpha = 1e-1, 
                    solver = 'lbfgs', # Valg af solver, her quasi-Newton solver
                    max_iter=1000,
@@ -128,7 +128,7 @@ mlp.fit(x,y)
 fig4 = plt.figure(dpi=400)
 plt.plot(x,y)
 plt.plot(x, mlp.predict(x), 'rx', ms=1)
-plt.title("mlp with 5 hidden units/neurons, so 5 terms in equation")
+plt.title("mlp with 5 hidden neurons, so 5 terms in equation")
 #Printer fundne koefficienter. De kommer i rækkefølge, så W1(1) er første værdi. og W1(2) er første værdi i anden array.
 #Bias leddene svarer til undervisers 0X-værdier. Den tredje er den overordnede bias, som er tredje hidden neuron.
 co = mlp.coefs_
