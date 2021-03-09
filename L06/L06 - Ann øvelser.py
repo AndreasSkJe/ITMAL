@@ -21,6 +21,7 @@ y = np.sinc(x)
 
 fig = plt.figure(dpi=400)
 plt.plot(x,y, '.')
+plt.title("Data")
 
 x = x.reshape(-1,1) # Scikit-algoritmer kræver (:,1)-format
 
@@ -70,7 +71,7 @@ fig2 = plt.figure(dpi=400)
 #Laver funktionen og udvælger de rigtige værdier ift. ovenstående udtryk som kommentar i c
 y_calc = (co[1][0][0]*np.tanh(co[0][0][0]*x+bias[0][0])+co[1][1][0]*np.tanh(co[0][0][1]*x+bias[0][1]+bias[1][0]))
 plt.plot(x,y_calc)
-plt.title('({:.3})*tanh(({:.3})*x+({:.3}))+({:.3})*tanh(({:.3})*x+({:.3})+({:.3})'.format(co[1][0][0],co[0][0][0],bias[0][0],co[1][1][0],co[0][0][1],bias[0][1],bias[1][0]))
+plt.title('Function = \n({:.3})*tanh(({:.3})*x+({:.3}))+({:.3})*tanh(({:.3})*x+({:.3})+({:.3})'.format(co[1][0][0],co[0][0][0],bias[0][0],co[1][1][0],co[0][0][1],bias[0][1],bias[1][0]))
 
 #%%
 # =============================================================================
